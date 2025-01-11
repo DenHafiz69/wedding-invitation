@@ -1,8 +1,22 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-weight: 400;
+    font-style: normal; */
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-family: "Sacramento", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.8em;
+    /* font-weight: 400; */
 }
 
 .content {
@@ -17,6 +31,8 @@ body {
 
 .nav-link {
     text-decoration: none;
+    color: #80A1D4;
+    font-weight: bold;
 }
 
 .navbar {
@@ -39,4 +55,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container.main {
+    background-color: #C0B9DD;
+    max-width: 500px;
+}
+
+.nav-link i {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.contact-info {
+    text-decoration: none;
 }
