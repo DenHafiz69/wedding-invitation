@@ -71,3 +71,11 @@ h2 {
 a.contact-info {
     text-decoration: none;
 }
+
+.contact-info {
+    margin-right: 0.2em;
+}
+
+.bi.bi-whatsapp {
+    color: #5FFC7B;
+}
