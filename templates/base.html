@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../static/styles.css">
+    
+</head>
+<body>
+
+    {% block main %}
+    {% endblock %}
+
+    <!-- Navigation Bar -->
+    <div class="container">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-around w-100">
+                    <a class="nav-link" href="#home">
+                        <i class="bi bi-house"></i>
+                        <span>Home</span>
+                    </a>
+                    <a class="nav-link" href="#tentative">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>Schedule</span>
+                    </a>
+                    <a class="nav-link" href="#rsvp">
+                        <i class="bi bi-card-checklist"></i>
+                        <span>RSVP</span>
+                    </a>
+                    <a class="nav-link" href="#contact">
+                        <i class="bi bi-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a class="nav-link" href="#location">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Location</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+</html>
