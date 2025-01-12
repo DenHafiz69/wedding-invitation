@@ -2,7 +2,10 @@
 
 {% block main %}
 
-    <div class="container">
+    <div class="container content">
+        <audio id="audio" controls autoplay>
+            <source src="/static/audio/music.mp3" type="audio/ogg">
+        </audio>
         <!-- Page 1: Name and Date -->
         <div id="home" class="content">
             <h1>{{ data["groom"] }} <br> & <br>{{ data["bride"] }}</h1>
