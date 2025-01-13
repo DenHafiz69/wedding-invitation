@@ -1,3 +1,10 @@
+:root {
+    --font-color-primary: #2c3333;
+    --font-color-secondary: #395b64;
+    --color-tertiary: #a5c9ca;
+    --bg-color: #e7f6f2;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -6,14 +13,26 @@ body {
 }
 
 h1 {
-    font-family: "Sacramento", serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 3em;
+    color: var(--font-color-primary);
 }
 
 h2 {
-    font-size: 1.8em;
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--font-color-primary);
+}
+
+h3 {
+    font-size: 1.2em;
+    color: var(--font-color-secondary);
+}
+
+.title-font {
+    /* font-family: "Parisienne", serif; */
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .content {
@@ -27,7 +46,7 @@ h2 {
 }
 
 .container.content {
-    background-image: url('/static/images/background.jpg');
+    /* background-image: url('/static/images/background.jpg'); */
     background-size: auto 100%;
 }
 
@@ -60,7 +79,8 @@ h2 {
 }
 
 .container.main {
-    background-color: #C0B9DD;
+    background-color: var(--bg-color);
+    /* background-color: #C0B9DD; */
     max-width: 500px;
 }
 
