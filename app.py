@@ -10,18 +10,12 @@ data = {
 }
 
 @app.route('/')
+def welcome():
+    return render_template("welcome.html", navigation=False)
+
+@app.route('/home')
 def index():
-    return render_template("index.html", title="Index", data=data)
-
-
-@app.route('/rsvp', methods=['GET', 'POST'])
-def rsvp():
-    if request.method == 'POST':
-        return render_template("success.html")
-
-    return render_template("index.html", title="Index", data=data)
-
-    
+    return render_template("index.html", data=data, navigation=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
