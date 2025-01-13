@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+    {{ data['groom']}} & {{ data['bride'] }}
+{% endblock %}
+
 {% block main %}
 
     <div class="container content">
@@ -8,7 +12,7 @@
         </audio>
         <!-- Page 1: Name and Date -->
         <div id="home" class="content">
-            <h1>{{ data["groom"] }} <br> & <br>{{ data["bride"] }}</h1>
+            <h1 class="title-font">{{ data["groom"] }} <br> & <br>{{ data["bride"] }}</h1>
             <p>Date: {{ data["date"] }}</p>
         </div>
     </div>
