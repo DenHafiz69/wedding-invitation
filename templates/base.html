@@ -17,44 +17,57 @@
 <body>
 
     <div class="main container">
+        <!-- Your song here -->
+        <audio id="myAudio" controls autoplay>
+            <source src="/static/audio/music.mp3" type="audio/ogg">
+        </audio>
+
+        <!-- The main content of the website -->
         {% block main %}
         {% endblock %}
 
-        {% if navigation %}
-            <!-- Navigation Bar -->
-            <div class="container">
-                <nav class="navbar  navbar-light">
-                    <div class="container-fluid">
-                        <div class="d-flex justify-content-around w-100">
-                            <a class="nav-link" href="{{ url_for('index') }}#home">
-                                <i class="bi bi-house"></i>
-                                <span>Home</span>
-                            </a>
-                            <a class="nav-link" href="{{ url_for('index') }}#tentative">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>Schedule</span>
-                            </a>
-                            <a class="nav-link" href="{{ url_for('index') }}#rsvp">
-                                <i class="bi bi-card-checklist"></i>
-                                <span>RSVP</span>
-                            </a>
-                            <a class="nav-link" href="{{ url_for('index') }}#contact">
-                                <i class="bi bi-envelope"></i>
-                                <span>Contact</span>
-                            </a>
-                            <a class="nav-link" href="{{ url_for('index') }}#location">
-                                <i class="bi bi-geo-alt"></i>
-                                <span>Location</span>
-                            </a>
-                        </div>
+        <!-- Navigation Bar -->
+        <div id="navBar" class="container">
+            <nav class="navbar  navbar-light">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-around w-100">
+                        <a class="nav-link" href="{{ url_for('index') }}#home">
+                            <i class="bi bi-house"></i>
+                            <span>Home</span>
+                        </a>
+                        <a class="nav-link" href="{{ url_for('index') }}#tentative">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Schedule</span>
+                        </a>
+                        <a class="nav-link" href="{{ url_for('index') }}#rsvp">
+                            <i class="bi bi-card-checklist"></i>
+                            <span>RSVP</span>
+                        </a>
+                        <a class="nav-link" href="{{ url_for('index') }}#contact">
+                            <i class="bi bi-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                        <a class="nav-link" href="{{ url_for('index') }}#location">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>Location</span>
+                        </a>
                     </div>
-                </nav>
-            </div>
-        {% endif %}
+                </div>
+            </nav>
+        </div>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('myAudio');
+            document.getElementById('welcomePage').style.display = "none";
+            document.getElementById('navBar').style.display = "contents";
+            audio.play().catch(error => console.error("Audio play error:", error));
+        }
+    </script>
 
 </body>
 </html>
