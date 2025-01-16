@@ -5,6 +5,16 @@
     --bg-color: #e7f6f2;
 }
 
+#navBar {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    background-color: var(--bg-color);
+    max-width: 500px;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
