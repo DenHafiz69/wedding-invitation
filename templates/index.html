@@ -6,7 +6,9 @@
 
 {% block main %}
 
-    {% include "welcome.html" %}
+    {% if hidden %}
+        {% include "welcome.html" %}
+    {% endif %}
 
     <div class="container content">
         <!-- Page 1: Name and Date -->
