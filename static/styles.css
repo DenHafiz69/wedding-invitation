@@ -78,8 +78,9 @@ h3 {
 
 .navbar {
     position: fixed;
-    bottom: 0;
     max-width: 500px;
+    /* align-items: center; */
+    bottom: 0;
     background-color: #f8f9fa;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -101,6 +102,7 @@ h3 {
 .container.main {
     /* background-color: #C0B9DD; */
     max-width: 500px;
+    size: portrait;
     background-image: url("/static/images/background-2.jpg");
     min-height: 100%;
     background-repeat: no-repeat;
