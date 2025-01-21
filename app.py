@@ -13,7 +13,7 @@ data = {
     "date": "14th June 2025"
 }
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET'])
 def index():
     if request.method == 'GET':
         return render_template("index.html", data=data, hidden=True)
