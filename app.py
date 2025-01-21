@@ -19,8 +19,8 @@ def index():
         return render_template("index.html", data=data, hidden=True)
 
 
-@app.route('/rsvp', methods=['POST'])
-def rsvp():
+@app.route('/submit-rsvp', methods=['POST'])
+def submit_rsvp():
 
     if request.method == 'POST':
         # Get the values from HTML page
@@ -30,7 +30,7 @@ def rsvp():
 
         print(f"User {user_name} has registered.")
 
-        return render_template('index.html', data=data, hidden=False)
+        return "success"
 
 if __name__ == '__main__':
     app.run(debug=True)
