@@ -1,0 +1,61 @@
+<!-- Play audio here -->
+<audio autoplay>
+    <source src="/static/audio/music.mp3">
+</audio>
+
+<!-- Header -->
+
+<div class="page">
+    <div class="sub-header">
+        Majlis Perkahwinan
+    </div>
+
+    <h1 class="header mt-2 mb-3">
+        {{ data['groom'] }} <br> 
+        & <br> 
+        {{ data['bride'] }}
+    </h1>
+
+    <div class="sub-header">
+        14 Jun 2025 | Sabtu
+    </div>
+
+    <div class="sub-header">
+        Kampung Bukit Kelidang, Gual Ipoh, <br>
+        17500 Tanah Merah, Kelantan
+    </div>
+</div>
+
+<hr>
+
+<!-- Invitation message -->
+
+{% include "_invitation.html" %}
+
+<hr>
+
+<!-- RSVP -->
+
+{% include "_rsvp.html" %}
+
+<!-- <div class="container navbar fixed-bottom">
+    <div class="container-fluid">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bi bi-book"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-telephone"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-compass"></i>
+                </a>
+            </li>
+        </ul>
+    </div> -->
+</div>

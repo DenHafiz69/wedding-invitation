@@ -1,0 +1,85 @@
+* {
+    text-align: center;
+}
+
+input {
+    border: none;
+}
+
+.map-icon {
+    color: black;
+    height: 20px;
+    width: auto;
+}
+
+#main-body {
+    max-width: 500px;
+    /* background-color: blueviolet; */
+    background-color: rgba(33, 167, 208, 0.519);
+    /* background-image: url(/static/images/purple_flower.jpg); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.name-invitation {
+    font-weight: bold;
+}
+
+.header {
+    font-size: 3em;
+    font-weight: 500;
+    /* font-family: "Parisienne", serif; */
+    font-family: "Send Flowers", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sub-header {
+    font-size: 1.25em;
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.normal-text {
+    font-size: 1.1em;
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-btn {
+    background-color: teal;
+    border: none;
+    color: white;
+    height: 36px;
+    width: 80px;
+    border-radius: 18px;
+}
+
+.main-btn:hover {
+    opacity: 0.8;
+}
+
+.main-btn:active {
+    opacity: 0.6;
+}
+
+.page {
+    height: 100vh;
+    /* overflow: auto;
+    margin-top: auto;
+    margin-bottom: auto; */
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container.navbar {
+    max-width: 500px;
+    background-color: azure;
+}
