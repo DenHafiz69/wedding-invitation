@@ -34,7 +34,8 @@ data = {
     'day': 'Sabtu',
     'time': '11:00 Pagi - 04:00 Petang',
     'firstaddress': 'Kampung Bukit Kelidang, Gual Ipoh,',
-    'secondaddress': '17500 Tanah Merah, Kelantan'
+    'secondaddress': '17500 Tanah Merah, Kelantan',
+    'location' : 'Tanah Merah, Kelantan'
 }
 
 @app.route("/")

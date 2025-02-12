@@ -1,85 +1,230 @@
-* {
-    text-align: center;
-}
-
-input {
-    border: none;
-}
-
-.map-icon {
-    color: black;
-    height: 20px;
-    width: auto;
-}
-
-#main-body {
-    max-width: 500px;
-    /* background-color: blueviolet; */
-    background-color: rgba(33, 167, 208, 0.519);
-    /* background-image: url(/static/images/purple_flower.jpg); */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-
-.name-invitation {
-    font-weight: bold;
-}
-
-.header {
-    font-size: 3em;
-    font-weight: 500;
-    /* font-family: "Parisienne", serif; */
-    font-family: "Send Flowers", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.sub-header {
-    font-size: 1.25em;
-    font-family: "Crimson Text", serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.normal-text {
-    font-size: 1.1em;
-    font-family: "Crimson Text", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.main-btn {
-    background-color: teal;
-    border: none;
+p {
+    margin-top: 0;
+    margin-bottom: 0;
     color: white;
-    height: 36px;
-    width: 80px;
-    border-radius: 18px;
 }
 
-.main-btn:hover {
-    opacity: 0.8;
+h1 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 52px;
+    line-height: 62px;
 }
 
-.main-btn:active {
-    opacity: 0.6;
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
 }
 
 .page {
+    width: 100vw;
     height: 100vh;
-    /* overflow: auto;
-    margin-top: auto;
-    margin-bottom: auto; */
-    background-color: none;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    background-image: url("/static/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.container.navbar {
-    max-width: 500px;
-    background-color: azure;
+.half-page {
+    width: 45%;
+    align-items: center;
+}
+
+.half-page.left {
+    margin-right: 10px;
+    padding-left: 5%;
+}
+
+.half-page.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.hero-details,
+.hero-button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.cta {
+    display: flex;
+    margin-top: 20px;
+}
+
+.hero-details {
+    font-size: 20px;
+}
+
+.hero-button,
+.rsvp-button {
+    background-color: teal;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-right: 15px;
+}
+
+.hero-button:hover,
+.rsvp-button:hover {
+    background-color: rgb(0, 157, 157);
+    cursor: pointer;
+}
+
+.hero-button:active,
+.rsvp-button:active {
+    background-color: rgb(0, 185, 185);
+}
+
+.hero-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    width: 65%;
+}
+
+.container {
+    width: 50vw;
+}
+
+.invitation-details,
+.invitation-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+.invitation-text {
+    text-align: justify;
+}
+
+.invitation-details {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.location-link {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+.details-location {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.rsvp-form {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rsvp-input {
+    display: block;
+    font-size: 14px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+        margin: 0;
+    }
+    
+    .hero-details {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .page {
+        flex-direction: column;
+        vertical-align: middle;
+    }
+
+    .invitation-details,
+    .invitation-text {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .details-location {
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .half-page {
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .half-page.left {
+        margin-right: 0;
+        padding-left: 0;
+    }
+
+    .half-page.right {
+        margin-left: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .location-link {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .hero-image {
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .rsvp-form {
+        width: 80%;
+    }
 }

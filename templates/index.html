@@ -1,10 +1,93 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Jemputan Perkahwinan</title>
+</head>
+<body>
 
-{% block title %}Majlis Perkahwinan{% endblock %}
+    <!-- Hero section -->
 
+    <div id="hero" class="page">
+        <div class="half-page left">
+            <h1 class="hero-title">Majlis Perkahwinan {{ data['groom'] }} & {{ data['bride'] }}</h1>
 
-{% block body %}
-    <div class="container" id="main-body">
-        {% include "_welcome.html" %}
+            <!-- <p class="hero-details">Sabtu, 14 Jun 2025</p> -->
+            <p class="hero-details">{{ data['day'] }}, {{ data['date'] }}</p>
+            <p class="hero-details">Tanah Merah, Kelantan</p>
+
+            <div class="cta">
+                <a href="#details">
+                    <button class="hero-button">Butiran Lanjut</button>
+                </a>
+                <a href="#rsvp">
+                    <button class="hero-button">RSVP</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="half-page right">
+            <img class="hero-image" src="/static/images/couple-photo.jpg" alt="">
+        </div>
     </div>
-{% endblock %}
+
+    <!-- Details Section -->
+    
+    <div id="details" class="page">
+        <div class="half-page left">
+            <p class="invitation-text">
+                Dengan izin Allah SWT, kami
+                <!-- Den Hafiz & Syazni -->
+                {{ data['groom'] }} & {{ data['bride'] }}
+                akan melangsungkan perkahwinan dan dengan penuh kesyukuran, kami ingin menjemput anda untuk bersama-sama meraikan hari bahagia ini.
+            </p>
+    
+            <p class="invitation-details">
+                &#x1F4C5; Tarikh: {{ data['date'] }} <br>
+                &#x23F0; Masa: {{ data['time'] }} <br>
+                &#x1F4CD; Lokasi: {{ data['firstaddress'] }} <br> {{ data['secondaddress'] }} <br>
+            </p>
+    
+            <p class="invitation-text">
+                Semoga dengan doa restu dan kehadiran anda, majlis ini akan mendapat keberkatan dan rahmat dari-Nya.
+            </p>
+        </div>
+
+        <div class="half-page right">
+            <a class="location-link" href="#">
+                <img class="details-location" src="/static/images/googlemaps.png" alt="">
+            </a>
+
+            <a class="location-link" href="#">
+                <img class="details-location" src="/static/images/waze.png" alt="">
+            </a>
+        </div>
+    </div>
+
+
+    <!-- RSVP Page -->
+    <div id="rsvp" class="page">
+        <form class="rsvp-form" hx-post="{{ url_for('rsvp') }}">
+            <input id="inputName" class="rsvp-input" type="text" placeholder="Nama" name="name" required minlength="3" maxlength="50">
+            <input id="inputPhone" class="rsvp-input" type="tel" placeholder="Nombor Telefon" name="phone" required pattern="[0-9]{10,12}">
+            <input id="inputPax" type="number" class="rsvp-input" placeholder="Bilangan Orang" name="pax" required min="1" max="10">
+
+            <button class="rsvp-button">
+                Hantar
+            </button>
+
+            <div class="success-dialog">
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- HTMX Script -->
+<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+</html>
