@@ -1,6 +1,8 @@
-from flask import Flask, render_template, url_for, send_file, request, redirect
+from flask import Flask, render_template, url_for, send_file, request, redirect, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
+
+import csv
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///registrations.db'  # SQLite database file
@@ -26,10 +28,6 @@ admins = {
 data = {
     'groom': 'Den Hafiz',
     'bride': 'Nor Syazni',
-    'fullgroom': 'Den Muhammad Hafiz Bin Jumaatuden',
-    'fullbride': 'Nor Syazni Binti Mazlan', 
-    'father': 'Mazlan Bin Abdullah',
-    'mother': 'Noriza Binti Ahmad',
     'date': '14 Jun 2025',
     'day': 'Sabtu',
     'time': '11:00 Pagi - 04:00 Petang',
@@ -41,11 +39,6 @@ data = {
 @app.route("/")
 def index():
     return render_template("index.html", data=data)
-
-@app.route("/home", methods=['GET'])
-def home():
-    # return send_file("templates/_home.html", mimetype="text/html")
-    return render_template("_home.html", data=data)
 
 
 @app.route("/rsvp", methods=['POST'])
@@ -61,7 +54,9 @@ def rsvp():
     db.session.add(new_registration)
     db.session.commit()
 
-    return "Success"
+    success_message = "<p class='success-message'>Terima kasih kerana mendaftar.<br> Maklumat anda telah disimpan.</p>"
+
+    return success_message
 
 
 
@@ -80,6 +75,36 @@ def clear_data():
     db.session.query(Registration).delete()
     db.session.commit()
     return redirect(url_for('admin'))
+
+
+@app.route('/download-csv', methods=['POST'])
+def download_csv():
+    # Put all data in database into a csv
+    registrations = Registration.query.all()
+
+    csv_path = 'registrations.csv'  # Or a more dynamic path if needed
+    registration_list = []
+
+    for registration in registrations:
+        registration_list.append([
+            registration.id,
+            registration.name,
+            registration.phone,
+            registration.pax
+        ])
+
+    with open(csv_path, mode='w', newline='', encoding='utf-8') as file: # Add encoding for special characters
+        writer = csv.writer(file)
+        writer.writerow(["ID", "Name", "Phone", "Pax"]) # Write header row
+        writer.writerows(registration_list) 
+        
+    directory = '.' # or 'static' if you put data.csv there
+    return send_from_directory(
+        directory=directory, 
+        path=csv_path,
+        mimetype='text/csv',  # Important for proper handling by browsers
+        as_attachment=True  # Forces the browser to download the file
+    )
 
 @app.route('/admin')
 @auth.login_required

@@ -20,21 +20,44 @@
         .button {
             margin: 10px 0;
             padding: 10px 15px;
-            background-color: #ff4d4d;
+            /* background-color: #ff4d4d; */
             color: white;
             border: none;
             cursor: pointer;
+            margin-right: 10px;
         }
-        .button:hover {
+        .clear.button {
+            background-color: #ff4d4d;
+        }
+        .download.button {
+            background-color: rgb(40, 134, 40);
+        }
+        .clear.button:hover {
             background-color: #cc0000;
+        }
+        .download.button:hover {
+            background-color: rgb(58, 165, 58);
+        }
+        .button-container {
+            display: flex;
         }
     </style>
 </head>
 <body>
     <h1>Registrations</h1>
-    <form action="/clear-data" method="POST">
-        <button type="submit" class="button">Clear All Data</button>
-    </form>
+    <div class="button-container">
+        <form action="/clear-data" method="POST">
+            <button type="submit" class="clear button">
+                Clear All Data
+            </button>
+        </form>
+    
+        <form action="/download-csv" method="POST">
+            <button type="submit" class="download button">
+                Download CSV
+            </button>
+        </form>
+    </div>
     <table>
         <thead>
             <tr>

@@ -31,9 +31,9 @@
             </div>
         </div>
 
-        <div class="half-page right">
+        <!-- <div class="half-page right">
             <img class="hero-image" src="/static/images/couple-photo.jpg" alt="">
-        </div>
+        </div> -->
     </div>
 
     <!-- Details Section -->
@@ -50,7 +50,7 @@
             <p class="invitation-details">
                 &#x1F4C5; Tarikh: {{ data['date'] }} <br>
                 &#x23F0; Masa: {{ data['time'] }} <br>
-                &#x1F4CD; Lokasi: {{ data['firstaddress'] }} <br> {{ data['secondaddress'] }} <br>
+                &#x1F4CD; Lokasi: {{ data['firstaddress'] }} {{ data['secondaddress'] }} <br>
             </p>
     
             <p class="invitation-text">
@@ -59,11 +59,11 @@
         </div>
 
         <div class="half-page right">
-            <a class="location-link" href="#">
+            <a class="location-link" target="_blank" href="https://maps.app.goo.gl/AVj8LwVSCGGznYbRA">
                 <img class="details-location" src="/static/images/googlemaps.png" alt="">
             </a>
 
-            <a class="location-link" href="#">
+            <a class="location-link" target="_blank" href="#">
                 <img class="details-location" src="/static/images/waze.png" alt="">
             </a>
         </div>
